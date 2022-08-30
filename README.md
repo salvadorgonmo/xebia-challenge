@@ -27,11 +27,34 @@ Best of luck
 
 ## Dev Notes
 
-- Leave any technical notes on any libraries or tools you chose to use, the more detail the better.
+- Mui material is used here because it contains a variety of different already built-in components that you can reuse in your application very easily and fast, very useful when you are building applications fast and with good quality, including a11y features that the component's offers.
+
+- Debounce hook; this hooks is used to enhance the performance by delaying the request to the GraphQL call each time the user is typing a key in the Input field by 400 ms. This pattern avoids making multiple calls to an API sequently and just hits one when the user finishes its typing actions.
+
+- Prettier and husky; to enhance readability in code by applying best practices linting the code format on every file, and husky checks everything is good before commiting a bunch of code to the repository.
 
 ### How to run app & test
 
-- Leave instruction on how to run and test your app here
+# Run the application.
+
+## Pre-requisites
+
+- Node version v16.15 or higher.
+- "[Npm](https://www.npmjs.com/)" (Node package manager)
+- "[Nvm](https://github.com/nvm-sh/nvm)" (optional) - to change between node versions.
+
+## Instructions
+
+- Run `npm install`
+- (Optional if you have Nvm) Run ´nvm use´
+- Next run the application with: `npm start`
+- Open [localhost](http://localhost:3000) in your browser and have fun!
+
+## Linting
+
+You can run `npm run prettier:check` to only check if the code is healthy or needs something to get fixed without applying the fix, just check.
+
+If you want to fix all possible autofixable problems, instead run `npm run prettier:fix`
 
 ### Future Improvements
 
@@ -40,5 +63,17 @@ Feel free to elaborate on how you would improve any of the following topics
 - Code Structuring:
 
 - Refactoring:
+  I would change the way I have implemented the UI components with maybe my own components, and a little bit of the power of Tailwind CSS.
+
+I would also add React Router to create proper URLs for each topic and view, and be able to manage different views if we want to add more features not only Topics.
+
+I would add unit tests because of the time, I couldn't add them. But I would do it using react testing library to test the following case scenarios:
+
+_Should search for a topic and return a list of topics related to it successfully_
+_Should not crash if there is an error in the call and let the user know that there was an error_
+_Should show loading text to the user if the api call is still on going_
+
+And probably more tests
 
 - Additional Features:
+  I would add a Home page to show the different capabilities the GitHub API lets you play with, starting with the Topics and then adding more cards with other available features, and adding react router to manage routes.
