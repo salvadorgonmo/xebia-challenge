@@ -1,18 +1,22 @@
 import React from "react";
-import { TextField } from "@mui/material";
+import { Input } from "../common";
 
-export const Input = ({ handleChange, value }) => {
+export const CommonInput = ({
+  handleChange,
+  value,
+  label,
+  hidden,
+  placeholder,
+}) => {
+  if (hidden) return null;
   return (
-    <TextField
-      sx={{
-        marginBottom: "20px",
-      }}
+    <Input
       onChange={handleChange}
       value={value}
-      label="Search your topic"
-      variant="standard"
+      label={label}
+      placeholder={placeholder}
     />
   );
 };
 
-export default Input;
+export default CommonInput;
